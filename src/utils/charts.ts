@@ -13,6 +13,7 @@ export const toChartLine = (data: any[], label: string, column: string, cross: b
         }
     });
 
+    
 
     labels.forEach((l: any) => {
         const values = data.filter((item: any) => item[label] === l);
