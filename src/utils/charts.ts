@@ -1,11 +1,14 @@
-
 import { ApexOptions } from "apexcharts";
 
-
-export const toChartLine = (data: any[], label: string, column: string, cross: boolean) => {
-
-    const labels:any[] = [];
-    const render: any[] = [];
+export const toChartLine = (
+  data: any[],
+  label: string,
+  column: string,
+  cross: boolean,
+  text: string
+) => {
+  const labels: any[] = [];
+  const render: any[] = [];
 
     data.forEach((item: any) => {
         if (!labels.includes(item[label]) || !cross) {
@@ -13,7 +16,6 @@ export const toChartLine = (data: any[], label: string, column: string, cross: b
         }
     });
 
-    
 
     labels.forEach((l: any) => {
         const values = data.filter((item: any) => item[label] === l);
@@ -21,10 +23,12 @@ export const toChartLine = (data: any[], label: string, column: string, cross: b
         render.push(total);
     });
 
-    const series = [{
-        name: column,
-        data: render
-    }]
+  const series3 = [
+    {
+      name: column,
+      data: render,
+    },
+  ];
 
     const options: ApexOptions = {
         chart: {
