@@ -22,7 +22,7 @@ export const toChartLine = (data: any[], label: string, column: string, cross: b
 
     const series = [{
         name: column,
-        data: render
+        data: cross ? render : data.map((item: any) => item[column].length)
     }]
 
     const options: ApexOptions = {
