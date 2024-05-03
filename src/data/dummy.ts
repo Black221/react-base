@@ -22,19 +22,43 @@ export const USER_COLUMS = [
     },
     {
         label: 'email',
-        sort: (data: any, sens: boolean) => {
-            return data
+        sort: (data: any[], sens: boolean) => {
+            return data.sort((a, b) => {
+                if (sens) {
+                    return a.email > b.email ? 1 : -1
+                } else {
+                    return a.email < b.email ? 1 : -1
+                }
+            })
         }
     },
     {
         label: 'role',
-        sort: (data: any, sens: boolean) => {
-            return data
+        sort: (data: any[], sens: boolean) => {
+            return data.sort((a, b) => {
+                if (sens) {
+                    return a.role > b.role ? 1 : -1
+                } else {
+                    return a.role < b.role ? 1 : -1
+                }
+            })
         }
     },
     {
         label: 'status',
-        sort: (data: any, sens: boolean) => {
+        sort: (data: any[], sens: boolean) => {
+            return data.sort((a, b) => {
+                if (sens) {
+                    return a.status > b.status ? 1 : -1
+                } else {
+                    return a.status < b.status ? 1 : -1
+                }
+            })
+        }
+    },
+    {
+        label: 'action',
+        sort: (data: any[], sens: boolean) => {
             return data
         }
     }
@@ -42,45 +66,101 @@ export const USER_COLUMS = [
 
 export const USER_DATA = [
     {
-        id: 1,
-        name: 'Bouna',
-        email: 'test@',
-        role: 'Admin',
-        status: 'Active'
+        name: 'user1',
+        email: '',
+        role: 'admin',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
     },
     {
-        id: 2,
-        name: 'Bouna 1',
+        name: 'user2',
         email: '',
-        role: 'Admin',
-        status: 'Active'
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
     },
     {
-        id: 3,
-        name: 'Bouna 2',
+        name: 'user3',
         email: '',
-        role: 'Admin',
-        status: 'Active'
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
     },
     {
-        id: 4,
-        name: 'Bouna 3',
+        name: 'user4',
         email: '',
-        role: 'Admin',
-        status: 'Active'
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
     },
     {
-        id: 5,
-        name: 'Bouna 4',
+        name: 'user5',
         email: '',
-        role: 'Admin',
-        status: 'Active'
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
     },
     {
-        id: 6,
-        name: 'Bouna 5',
+        name: 'user6',
         email: '',
-        role: 'Admin',
-        status: 'Active'
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user7',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user8',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user9',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user10',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user11',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user12',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user13',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
+    },
+    {
+        name: 'user14',
+        email: '',
+        role: 'user',
+        status: 'active',
+        products: ['product1', 'product2', 'product3']
     }
 ]
