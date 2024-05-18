@@ -5,17 +5,38 @@ import App from './app/App.tsx'
 import './index.css'
 import Login from './auth/Login.tsx'
 import Register from './auth/Register.tsx'
+import { MainProvider } from './providers/MainProvider.tsx'
+import { AuthProvider } from './providers/AuthProvider.tsx'
+import { ModalProvider } from './providers/ModalProvider.tsx'
+
+import Home from "./home/Page.tsx";
+import AuthGuard from './guards/AuthGuard.tsx'
+import IsAuth from './guards/isAuth';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<App />} />
-        
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+	<React.StrictMode>
+		<MainProvider>
+			<AuthProvider>
+				<ModalProvider>
+					<BrowserRouter>
+						<Routes>
 
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
+							<Route path="/" element={<Home />} />
+
+							<Route path='/'  element={<AuthGuard />}  >
+								<Route path="/app/*" element={<App />} />
+							</Route>
+
+							<Route  element={<IsAuth />}>
+								<Route path='/connexion' element={<Login />} />
+							</Route>
+
+							<Route path='/inscription' element={<Register />} />
+							
+						</Routes>
+					</BrowserRouter>
+				</ModalProvider>
+			</AuthProvider>
+		</MainProvider>
+	</React.StrictMode>,
 )
